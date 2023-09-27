@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" type="text/css">
-        <script src="https://sdk.mercadopago.com/js/v2"></script>
-        <title>E-COMMERCE</title>
-    </head>
-    <body>
-        <!--shop content-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>E-COMMERCE</title>
+    
+</head>
+<body>
+    <header>
+        <h2>Tienda de herramientas</h2>
+    </header>
+<!-- Button to toggle section visibility -->
+        
+        <h3>comidas</h3>
+        <button id="toggleSectionBtn">Toggle Section</button>
+    <section>
+        
+
+        <!-- Shop content -->
         <div class="card-products-container">
             <div class="card-products" id="shopContent"></div>
         </div>
-        <!--cart-btn-->>
-        <div class="cart-btn" id="cart-btn">🛒</div>
-        <!-- cart-counter -->
-        <span class="cart-counter" id="cart-counter">0</span>
-        <!--modal-->
-        <div class="modal-overlay" id="modal-overlay"></div>
-        <div class="modal-container" id="modal-container"></div>
+    </section>
 
-        <script src="js/products.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/cart.js"></script>
-    </body>
+    <!-- Cart button -->
+    <div class="cart-btn" id="cart-btn">🛒</div>
+    
+    <!-- Cart counter -->
+    <span class="cart-counter" id="cart-counter">0</span>
+    
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container" id="modal-container"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/cart.js"></script>
+
+    <script>
+        // Get references to the section and the button
+        const section = document.querySelector('section');
+        const toggleSectionBtn = document.getElementById('toggleSectionBtn');
+
+        // Add a click event listener to the button
+        toggleSectionBtn.addEventListener('click', function () {
+            // Toggle the 'hidden' class on the section
+            const isHidden = section.classList.toggle('hidden');
+            
+            // Change button text based on the section's visibility
+            toggleSectionBtn.innerText = isHidden ? 'Show Section' : 'Hide Section';
+        });
+    </script>
+</body>
 </html>
+

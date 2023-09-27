@@ -1,3 +1,6 @@
+.hidden {
+    display: none;
+}
 .card-products-container {
     margin: 5vh auto;
 }
