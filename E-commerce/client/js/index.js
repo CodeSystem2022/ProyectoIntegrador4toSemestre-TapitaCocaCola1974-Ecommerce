@@ -1,40 +1,42 @@
-const shopContent = document.getElementById("shopContent");
-const cart = [];
 
-productos.forEach((product) => {
-    const content = document.createElement("div");
-    content.className = "card";
-    content.innerHTML = `
-    <img src="${product.img}">
-    <h3>${product.productName}</h3>
-    <p class="price">${product.price} $</p>
-    `;
-    shopContent.append(content);
+        const shopContent = document.getElementById("shopContent");
+        const cart = [];
 
-    const buyButton = document.createElement("button");
-    buyButton.innerText = "Comprar";
+        productos.forEach((product) => {
+            const content = document.createElement("div");
+            content.className = "card";
+            content.innerHTML = `
+                <img src="${product.img}">
+                <h3>${product.productName}</h3>
+                <p class="price">${product.price} $</p>
+            `;
+            shopContent.append(content);
 
-    content.append(buyButton);
+            const buyButton = document.createElement("button");
+            buyButton.innerText = "Comprar";
 
-    buyButton.addEventListener("click", ()=>{
-        const repeat = cart.some((repeatProduct) => repeatProduct.id === product.id);
-        
-        if (repeat) {
-            cart.map((prod)=> {
-                if(prod.id == product.id){
-                    prod.quanty++;
+            content.append(buyButton);
+
+            buyButton.addEventListener("click", () => {
+                const repeat = cart.some((repeatProduct) => repeatProduct.id === product.id);
+
+                if (repeat) {
+                    cart.map((prod) => {
+                        if (prod.id == product.id) {
+                            prod.quanty++;
+                            displayCartCounter();
+                        }
+                    });
+                } else {
+                    cart.push({
+                        id: product.id,
+                        productName: product.productName,
+                        price: product.price,
+                        quanty: product.quanty,
+                        img: product.img,
+                    });
                     displayCartCounter();
                 }
             });
-        } else {
-            cart.push({
-                id: product.id,
-                productName: product.productName,
-                price: product.price,
-                quanty: product.quanty,
-                img: product.img,
-            });
-            displayCartCounter();
-        }
-    });
-});
+        });
+   
