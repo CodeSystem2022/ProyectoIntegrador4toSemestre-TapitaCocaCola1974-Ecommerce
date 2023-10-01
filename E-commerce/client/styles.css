@@ -1,8 +1,42 @@
+#introText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; /* Optional: Adjust the height based on your design */
+}
+
+#introText div {
+    text-align: center;
+}
+.bg-custom-color {
+    background-color: rgb(75, 75, 241); /* Replace with the color code or name you want */
+}
 .hidden {
     display: none;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+h3,
+#toggleSectionBtn,
+#toggleSectionBtn2,
+#toggleSectionBtn3 {
+    margin-top: 20px;
+}
+
 .card-products-container {
     margin: 5vh auto;
+    text-align: center;
 }
 
 .card-products {
@@ -43,18 +77,6 @@
     display: none;
 }
 
-.modal-close {
-    float: right;
-    cursor: pointer;
-}
-
-.modal-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 .card-products img {
     margin-top: 40px;
     width: 250px;
@@ -73,20 +95,19 @@
     font-size: 15px;
 }
 
-.card-products button:hover {
-    opacity: 0.7;
-}
-
 .cart-btn {
     position: fixed;
-    top: 90vh;
-    right: 40px;
-    background-color: rgb(25, 25, 25);
-    padding: 10px;
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
-    transition: transform 0.2s ease-in-out;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-counter {
+    position: fixed;
+    bottom: 35px;
+    right: 55px;
+    font-size: 18px;
 }
 
 .modal-body {
@@ -174,7 +195,6 @@
 }
 
 .cart-counter {
-    /* display: none; */ /* Esta línea está comentada para ocultar el contador inicialmente */
     position: fixed;
     top: 89vh;
     right: 27px;
@@ -183,8 +203,8 @@
     background-color: #ed3434;
     padding: 4px;
     border-radius: 50%;
-    height: 17px;
-    width: 17px;
+    height: 30px;
+    width: 20px;
     font-size: 15px;
 }
 
