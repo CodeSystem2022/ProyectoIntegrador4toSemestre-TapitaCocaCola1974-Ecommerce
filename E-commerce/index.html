@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa De Herramientas</title>
+    <!-- Enlace a Bootstrap para estilos y jQuery para el carrusel -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Enlace a archivo CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Imagen de fondo -->
+    <div class="background-image"></div>
+
+    <!-- Menú lateral -->
+    <div class="sidebar">
+        <h2>Categorías</h2>
+        <ul>
+            <li><a href="#">Herramientas</a></li>
+            <li><a href="#">Herramientas Manuales</a></li>
+            <li><a href="#">Herramientas Mecánicas</a></li>
+            <li><a href="#">Herramientas de Sujeción</a></li>
+            <li><a href="#">Herramientas de Golpe</a></li>
+            <li><a href="paginacompras.html">Ir a Compras</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <!-- Encabezado de la página -->
+        <header>
+            <h1>Bienvenido a La Casa De Herramientas </h1>
+        </header>
+
+        <!-- Carrusel de promociones -->
+        <div id="carouselPromociones" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-image">
+                        <img src="Media/imagenPrinciBrief.jpeg" alt="Promoción 1">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image">
+                        <img src="Media\promocionesbancarias.png" alt="Promoción 2">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image">
+                        <img src="Media\Herramientas3.jpg" alt="Promoción 3">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselPromociones" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselPromociones" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        <!-- Botón de redirección a la página de compras -->
+        <button onclick="irAPaginaCompras()">Ir a Compras</button>
+
+        <!-- Script personalizado para la redirección -->
+        <script>
+            function irAPaginaCompras() {
+                // Redirige a la página de compras
+                window.location.href = "pagina_de_compras.html";
+            }
+        </script>
+    </div>
+</body>
+</html>

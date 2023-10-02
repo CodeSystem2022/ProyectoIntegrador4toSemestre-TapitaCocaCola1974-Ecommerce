@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamos Trabajando en la Página de Compras</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Color de fondo de la página */
+        }
+
+        /* Contenido principal */
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #007bff; /* Color de fondo del encabezado */
+            color: #fff; /* Color del texto del encabezado */
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        /* Estilos para el mensaje */
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido principal -->
+    <div class="content">
+        <!-- Encabezado de la página -->
+        <header>
+            <h1>Estamos Trabajando en la Página de Compras</h1>
+        </header>
+
+        <!-- Mensaje de trabajo en progreso -->
+        <p>Disculpa las molestias, pero la página de compras está en desarrollo y actualmente no está disponible. Estamos trabajando para mejorar tu experiencia de compra. ¡Vuelve pronto para explorar nuestra selección de productos!</p>
+
+        <!-- Contador de tiempo -->
+        <div id="countdown">
+            <p>La página de compras estará disponible en:</p>
+            <p id="timer">00:00:00</p>
+        </div>
+    </div>
+
+    <!-- JavaScript para el contador de tiempo -->
+    <script>
+        // Fecha y hora de finalización del trabajo en la página de compras (ejemplo: 1 de enero de 2024 a las 12:00 PM)
+        const fechaFinalizacion = new Date("2024-01-01T12:00:00");
+
+        function actualizarContador() {
+            const ahora = new Date().getTime();
+            const diferencia = fechaFinalizacion - ahora;
+
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = `${horas}:${minutos}:${segundos}`;
+        }
+
+        setInterval(actualizarContador, 1000);
+    </script>
+</body>
+</html>
