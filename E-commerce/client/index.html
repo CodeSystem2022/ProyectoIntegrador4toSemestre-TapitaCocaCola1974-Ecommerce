@@ -6,13 +6,92 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" type="text/css">
         <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <title>E-COMMERCE</title>
     </head>
     <body>
-        <!--shop content-->
-        <div class="card-products-container">
-            <div class="card-products" id="shopContent"></div>
+         <!-- Imagen de fondo -->
+    <div class="background-image"></div>
+
+    <!-- Menú lateral -->
+    <div class="sidebar">
+        <h2>Categorías</h2>
+        <ul>
+            <li><button id="toggleSectionBtn2">Herramientasx</button></li>
+            <li><a href="#">Herramientas Manuales</a></li>
+            <li><a href="#">Herramientas Mecánicas</a></li>
+            <li><a href="#">Herramientas de Sujeción</a></li>
+            <li><a href="#">Herramientas de Golpe</a></li>
+            <li><a href="paginacompras.html">Ir a Compras</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <!-- Encabezado de la página -->
+        <header>
+            <h1>Bienvenido a La Casa De Herramientas </h1>
+        </header>
+
+        <!-- Carrusel de promociones -->
+        <div id="carouselPromociones" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-image">
+                        <img src="Media/imagenPrinciBrief.jpeg" alt="Promoción 1">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image">
+                        <img src="Media\promocionesbancarias.png" alt="Promoción 2">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-image">
+                        <img src="Media\Herramientas3.jpg" alt="Promoción 3">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselPromociones" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselPromociones" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
+
+        
+
+
+        <!--shop content-->
+        <section id="section1"> 
+            
+        
+            <!-- Shop content -->
+            <div class="card-products-container">
+                <div class="card-products" id="shopContent"></div>
+            </div>
+        </section>
+        <section id="section2">
+            <!-- Shop content2 -->
+            <div class="card-products-container">
+                <div class="card-products" id="shopContent2"></div>
+            </div>
+        </section>
+    
+        <h3>tercera section </h3>
+    <section id="section3">
+        <!-- Shop content2 -->
+        <div class="card-products-container">
+            <div class="card-products" id="shopContent3"></div>
+        </div>
+    </section>
+
         <!--cart-btn-->>
         <div class="cart-btn" id="cart-btn">🛒</div>
         <!-- cart-counter -->
@@ -21,6 +100,13 @@
         <div class="modal-overlay" id="modal-overlay"></div>
         <div class="modal-container" id="modal-container"></div>
 
+
+        <script>
+            function irAPaginaCompras() {
+                // Redirige a la página de compras
+                window.location.href = "pagina_de_compras.html";
+            }
+        </script>
         <script src="js/products.js"></script>
         <script src="js/index.js"></script>
         <script src="js/cart.js"></script>
