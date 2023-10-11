@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 .card-products-container {
     margin: 5vh auto;
 }
@@ -77,12 +81,12 @@
 .cart-btn {
     position: fixed;
     top: 90vh;
-    right: 40px;
+    right: 41px;
     background-color: rgb(25, 25, 25);
     padding: 10px;
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 38px;
+    width: 40px;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -180,7 +184,7 @@
     background-color: #ed3434;
     padding: 4px;
     border-radius: 50%;
-    height: 17px;
+    height: 28px;
     width: 17px;
     font-size: 15px;
 }
@@ -280,4 +284,54 @@ button:hover {
     height: auto;
 }
 
+/* Media query for screens with a width of 600 pixels or less */
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content horizontally */
+    }
 
+    .sidebar {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        position: static; /* Reset position */
+    }
+
+    .sidebar h2 {
+        font-size: 1.5em;
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center; /* Center the buttons */
+    }
+
+    .sidebar li {
+        margin-bottom: 0;
+    }
+
+    .sidebar button {
+        width: auto;
+    }
+
+    .content {
+        margin-left: 0%;
+        margin-top: 2px;
+        text-align: center; /* Center content horizontally */
+    }
+
+    .card-products-container {
+        margin: 5vh 0;
+    }
+
+    .card-products {
+        justify-content: center;
+    }
+}
