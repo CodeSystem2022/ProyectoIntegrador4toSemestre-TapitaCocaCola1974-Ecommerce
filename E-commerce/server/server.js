@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const pool = require('./connection');
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 const path = require("path");
+
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
