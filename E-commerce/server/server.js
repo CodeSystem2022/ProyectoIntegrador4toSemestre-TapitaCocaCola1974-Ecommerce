@@ -29,8 +29,8 @@ app.post("/create_preference", (req, res) => {
 			}
 		],
 		back_urls: {
-			"success": "http://localhost:8081",
-			"failure": "http://localhost:8081",
+			"success": "http://localhost:8080",
+			"failure": "http://localhost:8080",
 			"pending": ""
 		},
 		auto_return: "approved",
@@ -54,6 +54,6 @@ app.get('/feedback', function (req, res) {
 	});
 });
 
-app.listen(8081, () => {
-	console.log("The server is now running on Port 8081");
+app.listen(8080, () => {
+	console.log("The server is now running on Port 8080");
 });
