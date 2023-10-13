@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const pool = require('./connection');
+const pool = require('./connection.js');
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 const path = require("path");
@@ -31,8 +31,8 @@ app.post("/create_preference", (req, res) => {
 			}
 		],
 		back_urls: {
-			"success": "http://localhost:8080",
-			"failure": "http://localhost:8080",
+			"success": "http://localhost:8081",
+			"failure": "http://localhost:8081",
 			"pending": ""
 		},
 		auto_return: "approved",
@@ -56,6 +56,6 @@ app.get('/feedback', function (req, res) {
 	});
 });
 
-app.listen(8080, () => {
-	console.log("The server is now running on Port 8080");
+app.listen(8081, () => {
+	console.log("The server is now running on Port 8081");
 });
