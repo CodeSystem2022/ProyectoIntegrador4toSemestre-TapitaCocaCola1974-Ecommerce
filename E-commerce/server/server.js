@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const { pool, insertarCarritoEnBD } = require('./connection.js');
+const { pool,insertarCarritoEnBD} = require('./connection.js');
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 const path = require("path");
@@ -9,15 +9,23 @@ app.use(express.json());
 
 
 //ruta de ticket
-app.post('/create_preferences', (req, res) => {
-	const jsonData = req.body; // Access the JSON data from the request body
-	console.log('Received JSON data:', jsonData);
+app.post('/create_preferences', async (req, res) => {
+	try {
+	  const jsonData = req.body; // Access the JSON data from the request body
+	  console.log('Received JSON data:', jsonData);
   
-	// Your processing logic here
+	  // Save the JSON data to the database
+	  await insertarCarritoEnBD(jsonData);
   
-	res.status(200).json({ message: 'JSON data received successfully',data: jsonData });
+	  // Respond with a success message
+	  res.status(200).json({ message: 'JSON data received and saved to the database' });
+	} catch (error) {
+	  console.error('Error saving to the database:', error);
+	  // Respond with an error message
+	  res.status(500).json({ error: 'Internal server error' });
+	}
   });
-  
+
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({

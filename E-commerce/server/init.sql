@@ -1,16 +1,6 @@
-CREATE TABLE compra(
+CREATE TABLE purchased_items (
     id SERIAL PRIMARY KEY,
-    productName VARCHAR(255) NOT NULL,
-    price VARCHAR(255) NOT NULL,
-    quantity VARCHAR(255) NOT NULL,
-    fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
-
+    data JSONB,
+    purchase_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE compras(
-    id SERIAL PRIMARY KEY,
-    Descripcion VARCHAR(255) NOT NULL,
-
-    fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
-
-);

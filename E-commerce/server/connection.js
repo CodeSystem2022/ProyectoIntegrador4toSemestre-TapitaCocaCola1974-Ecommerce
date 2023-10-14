@@ -21,12 +21,25 @@ pool.connect((err, client, release) => {
 });
 
 // Función para insertar el carrito en la base de datos
-const insertarCarritoEnBD = async (cartData) => {
+const insertarCarritoEnBD = async (cartDataArray) => {
   try {
-      const result = await pool.query('INSERT INTO carritos (cart_data) VALUES ($1) RETURNING *', [cartData]);
-      return result.rows[0]; // Devuelve los datos insertados
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+
+      for (const cartItem of cartDataArray) {
+        const result = await client.query('INSERT INTO purchased_items (data) VALUES ($1) RETURNING *', [cartItem]);
+        console.log(`Data for ID ${result.rows[0].id} saved to the database`);
+      }
+
+      await client.query('COMMIT');
+    } finally {
+      client.release();
+    }
+
+    console.log('All data saved to the database');
   } catch (error) {
-      throw error;
+    throw error;
   }
 };
 
