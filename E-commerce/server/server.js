@@ -1,10 +1,23 @@
 const express = require("express");
 const app = express();
-const pool = require('./connection.js');
+const { pool, insertarCarritoEnBD } = require('./connection.js');
 const cors = require("cors");
 const mercadopago = require("mercadopago");
 const path = require("path");
+app.use(express.json());
 
+
+
+//ruta de ticket
+app.post('/create_preferences', (req, res) => {
+	const jsonData = req.body; // Access the JSON data from the request body
+	console.log('Received JSON data:', jsonData);
+  
+	// Your processing logic here
+  
+	res.status(200).json({ message: 'JSON data received successfully',data: jsonData });
+  });
+  
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
@@ -59,3 +72,5 @@ app.get('/feedback', function (req, res) {
 app.listen(8081, () => {
 	console.log("The server is now running on Port 8081");
 });
+
+

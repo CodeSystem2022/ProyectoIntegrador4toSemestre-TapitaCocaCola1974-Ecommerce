@@ -1,21 +1,11 @@
-
 const modalContainer = document.getElementById("modal-container");
 const modalOverlay = document.getElementById("modal-overlay");
 
 const cartBtn = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
-const pool = require('./connection')
 
-
-
-
-
-
-
-let cartString = "";
 
 const displayCart = () => {
-    const pool = require('./connection')
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
@@ -96,35 +86,26 @@ const displayCart = () => {
     `;
     const checkoutBtn = modalFooter.querySelector('#checkout-btn');
     
-
-// Agrega un event listener para el evento 'click'
-checkoutBtn.addEventListener('click', function() {
+    checkoutBtn.addEventListener('click', function () {
+        // Assuming you have a variable named 'cart'  
+      // Send the 'cart' object to your server
+        fetch('http://localhost:8081/create_preferences', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(cart),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Server response:', data);
+          // Handle the server response if needed
+        })
+        .catch(error => console.error('Error:', error));
+      });
     
-    // Ahora 'cartString' contiene la lista 'cart' en formato de cadena JSON
-    const cartString = JSON.stringify(cart);
-    console.log("cartString is = ");
-    console.log(cartString);
-
-    try {
-        const query = 'INSERT INTO compras (descripcion) VALUES ($1)';
-        const values = [cartString];
     
-        pool.query(query, values, (error, result) => {
-            if (error) {
-                console.error('Error al ejecutar la consulta:', error.message);
-            } else {
-                console.log('Consulta ejecutada exitosamente.');
-            }
-        });
-    } catch (error) {
-        console.error('Error al ejecutar la consulta:', error.message);
-    } finally {
-        // Este bloque finally asegura que siempre liberes el pool después de realizar la consulta.
-        pool.end();
-    }
 
-    alert('Botón de pago clickeado');
-});
     modalContainer.append(modalFooter);
     // mp;
     const mercadopago = new MercadoPago("TEST-091dee59-6e52-42d3-bb7e-f01374d4e045", {
@@ -143,7 +124,7 @@ checkoutBtn.addEventListener('click', function() {
             price: total,
         };
 
-        fetch("http://localhost:8081/create_preference", {
+        fetch("http://localhost:8080/create_preference", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -209,6 +190,4 @@ const displayCartCounter = () => {
     }else{
         cartCounter.style.display = "none";
     }
-};
-
-
+}
