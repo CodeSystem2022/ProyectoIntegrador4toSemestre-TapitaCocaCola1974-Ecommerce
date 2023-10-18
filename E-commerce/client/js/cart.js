@@ -23,7 +23,7 @@ const displayCart = () => {
     });
 
     const modalTitle = document.createElement("div");
-    modalTitle.innerText = "Cart";
+    modalTitle.innerText = "Carrito";
     modalTitle.className = "modal-title";
     modalHeader.append(modalTitle);
 
@@ -89,7 +89,7 @@ const displayCart = () => {
     checkoutBtn.addEventListener('click', function () {
         // Assuming you have a variable named 'cart'  
       // Send the 'cart' object to your server
-        fetch('http://localhost:8081/create_preferences', {
+        fetch('http://localhost:8080/create_preferences', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

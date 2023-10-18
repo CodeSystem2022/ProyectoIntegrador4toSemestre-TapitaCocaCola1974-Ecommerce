@@ -122,8 +122,6 @@ productos3.forEach((product) => {
 
     });
 });
-
-console.log("cart is = ")
 console.log(cart);
 
 

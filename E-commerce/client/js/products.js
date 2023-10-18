@@ -1,24 +1,24 @@
 const productos = [
     {
         id: 1,
-        productName: "Carne molida",
-        price: 1800,
+        productName: "Pinza",
+        price: 8000,
         quanty: 1,
-        img: "media/a.jpg"
+        img: "media/pinza.png"
     },
     {
         id: 2,
-        productName: "Tostadas",
-        price: 400,
+        productName: "Alicate",
+        price: 7000,
         quanty: 1,
-        img: "media/b.jpg"
+        img: "media/alicate.png"
     },
     {
         id: 3,
-        productName: "Papas",
-        price: 500,
+        productName: "Martillo",
+        price: 4000,
         quanty: 1,
-        img: "media/p.jpg"
+        img: "media/martillo.jpg"
     },
    
 ];
@@ -26,24 +26,24 @@ const productos = [
 const productos2 = [
     {
         id: 4,
-        productName: "lapis",
-        price: 1000,
+        productName: "Morsa de banco",
+        price: 15000,
         quanty: 1,
-        img: "media/lapis.jpg"
+        img: "media/morsa.jpg"
     },
     {
         id: 5,
-        productName: "Tijera",
-        price: 400,
+        productName: "Pinza de fuerza",
+        price: 7800,
         quanty: 1,
-        img: "media/rijera.jpg"
+        img: "media/fuerza.png"
     },
     {
         id: 6,
-        productName: "plasticola",
-        price: 300,
+        productName: "Sargento",
+        price: 5300,
         quanty: 1,
-        img: "media/plasticola.jpg"
+        img: "media/sargento.jpg"
     },
     
 ]
@@ -51,24 +51,24 @@ const productos2 = [
 const productos3 = [
     {
         id: 5,
-        productName: "martillo",
-        price: 800,
+        productName: "Amoladora",
+        price: 25000,
         quanty: 1,
-        img: "media/martillo.jpg"
+        img: "media/amoladora.jpg"
     },
     {
         id: 6,
-        productName: "clavos",
-        price: 350,
+        productName: "Taladro",
+        price: 22000,
         quanty: 1,
-        img: "media/clavos.jpg"
+        img: "media/taladro.png"
     },
     {
         id: 7,
-        productName: "plasticola",
-        price: 450,
+        productName: "Caladora",
+        price: 60000,
         quanty: 1,
-        img: "media/tornillos.jpg"
+        img: "media/caladora.png"
     },
     
 ]

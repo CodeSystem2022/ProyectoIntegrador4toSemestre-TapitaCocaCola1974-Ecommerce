@@ -28,3 +28,6 @@ toggleSectionBtn3.addEventListener('click', function () {
     console.log('Button 3 clicked');
     toggleSection(section3);
 });
+section1.classList.add('hidden');
+section2.classList.add('hidden');
+section3.classList.add('hidden');
