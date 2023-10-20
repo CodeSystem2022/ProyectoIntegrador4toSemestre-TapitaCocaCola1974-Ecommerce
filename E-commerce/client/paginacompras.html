@@ -42,36 +42,49 @@
     <div class="content">
         <!-- Encabezado de la página -->
         <header>
-            <h1>Estamos Trabajando en la Página de Compras</h1>
+            <h1>El día de entrega final se acerca...</h1>
         </header>
 
         <!-- Mensaje de trabajo en progreso -->
-        <p>Disculpa las molestias, pero la página de compras está en desarrollo y actualmente no está disponible. Estamos trabajando para mejorar tu experiencia de compra. ¡Vuelve pronto para explorar nuestra selección de productos!</p>
+        <p>Y el tiempo restante es el siguiente, pero tenemos nuestro proyecto listo. Esperamos que lo disfruten...</p>
 
         <!-- Contador de tiempo -->
         <div id="countdown">
-            <p>La página de compras estará disponible en:</p>
+            <p>Ir igualmente a nuestro E-commerce:</p>
             <p id="timer">00:00:00</p>
         </div>
+        <button onclick="redireccionar()">Ir a la página web</button>
     </div>
 
     <!-- JavaScript para el contador de tiempo -->
     <script>
-        // Fecha y hora de finalización del trabajo en la página de compras (ejemplo: 1 de enero de 2024 a las 12:00 PM)
-        const fechaFinalizacion = new Date("2024-01-01T12:00:00");
+        // Fecha objetivo (10/11/2023)
+        const targetDate = new Date('2023-11-10T00:00:00').getTime();
 
-        function actualizarContador() {
-            const ahora = new Date().getTime();
-            const diferencia = fechaFinalizacion - ahora;
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
 
-            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+            if (timeRemaining <= 0) {
+                document.getElementById('countdown').innerHTML = "¡El evento ha ocurrido!";
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            document.getElementById("timer").innerHTML = `${horas}:${minutos}:${segundos}`;
+                document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
         }
 
-        setInterval(actualizarContador, 1000);
+        // Actualiza el contador cada segundo
+        setInterval(updateCountdown, 1000);
+        // Actualiza el contador al cargar la página
+        updateCountdown();
+        function redireccionar() {
+        // Redirige a la página web deseada, reemplaza 'URL_DE_LA_PAGINA' con la URL real
+        window.location.href = 'index.html';
+    }
     </script>
 </body>
 </html>
