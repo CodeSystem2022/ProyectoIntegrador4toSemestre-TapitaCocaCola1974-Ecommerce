@@ -4,7 +4,7 @@ const pool = new Pool({
   host: "localhost",
   database: "db",
   password: "matiitas",
-  port: 5432, // Cambia esto si tu base de datos está en un puerto diferente
+  port: 5432, 
 });
 
 pool.connect((err, client, release) => {
@@ -14,13 +14,10 @@ pool.connect((err, client, release) => {
   }
   console.log('Conexión exitosa al pool de PostgreSQL');
 
-  // Ahora puedes realizar consultas con 'client.query(...)'
-
-  // Liberar el cliente de vuelta al pool
   release();
 });
 
-// Función para insertar el carrito en la base de datos
+
 const insertarCarritoEnBD = async (cartDataArray) => {
   try {
     const client = await pool.connect();
