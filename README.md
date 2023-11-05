@@ -1,7 +1,7 @@
 # ProyectoIntegrador4erSemestre-TapitaCocaCola1974-Ecommerce
+<div align="center">
+<img src="https://media.giphy.com/media/QNFhOolVeCzPQ2Mx85/giphy.gif" />
+</div>
 
-Proyecto E-Commerce Tapita de Coca Cola 1974
 
-NO REALIZAR PULL REQUEST DESDE DEVELOP SIN ANTES CONSULTAR!!!
-NO REALIZAR PULL REQUEST DESDE DEVELOP SIN ANTES CONSULTAR!!!
-NO REALIZAR PULL REQUEST DESDE DEVELOP SIN ANTES CONSULTAR!!!
+Para inicializar este proyecto debemos abrir la consola e ir a la carpeta server, para ello debemos utilizar el comando cd server. una vez estemos ahi deberemos utilizar el comando npm start.
